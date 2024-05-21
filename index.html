@@ -1,12 +1,71 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>자기소개</title>
-	</head>
-	<body><h1>햐햐햐</h1>
-	<img src="C:\Users\oscar\Downloads\다운로드.htm" />
-		<p>내이름은 선병찬</p>
-		<p>지금은 잠이 오지</p>
-		<p>하지만 지금은 못자!</p>
-	</body>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .profile-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .name {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .music {
+            margin-top: 20px;
+        }
+        .sns-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .sns-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="profile.jpg" alt="프로필 사진" class="profile-img">
+        <div class="name">선병찬</div>
+        <div class="music">
+            <audio id="favorite-song" src="favorite_song.mp3"></audio>
+            <button onclick="playMusic()">가장 좋아하는 곡 5초 듣기</button>
+        </div>
+        <button class="sns-button" onclick="redirectSNS()">SNS로 이동</button>
+    </div>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById('favorite-song');
+            audio.currentTime = 0; // 곡을 처음부터 재생
+            audio.play();
+            setTimeout(function() {
+                audio.pause();
+            }, 5000); // 5초 후에 멈춤
+        }
+
+        function redirectSNS() {
+            window.location.href = 'https://www.yoursnsprofile.com';
+        }
+    </script>
+</body>
 </html>
